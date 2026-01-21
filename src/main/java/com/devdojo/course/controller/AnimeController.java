@@ -43,4 +43,10 @@ public class AnimeController {
         animeService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @PutMapping
+    public ResponseEntity<Void> delete(@RequestBody Anime anime){
+        animeService.replace(anime);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
